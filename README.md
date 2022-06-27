@@ -1,6 +1,7 @@
 # Jupyter-installation on Ubuntu
 This repo shows that how to set up jupyter lab from your own PC and VM
 
+Give folder directory that you installed. Not using this config directory install in home/.jupyter folder
 <code>export "JUPYTER_CONFIG_DIR=/home/mmc/jupyterlab"</code>
 
 <code>sudo apt install python</code>
