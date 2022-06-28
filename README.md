@@ -2,61 +2,92 @@
 This repo shows that how to set up jupyter lab from your own PC and VM
 
 Give folder directory that you installed. Not using this config directory install in home/.jupyter folder <br/>
-<code>export "JUPYTER_CONFIG_DIR=/home/mmc/jupyterlab"</code>
+```
+export "JUPYTER_CONFIG_DIR=/home/mmc/jupyterlab"
+```
 
 If you don't have python in your computer, please install with this command <br/>
-<code>sudo apt install python</code>
+```
+sudo apt install python
+```
 
 pip install <br/>
-<code>sudo apt install -y python3-pip</code>
+```
+sudo apt install -y python3-pip
+```
 
 When you finished python installation, can check the python version in computer <br/>
-<code>python3 --version</code>
+```
+python3 --version
+```
 
 Each virtual environment has its own Python binary (which matches the version of the binary that was used to create this environment) and can have its own independent set of installed Python packages in its site directories. <br/>
-<code>pip install virtualenv</code>
+```
+pip install virtualenv
+```
 
 Make sure virtualenv installation. <br/>
-<code>virtualenv --version</code>
+```
+virtualenv --version
+```
 
 Create python virtual enviroment <br/>
-<code>virtualenv py30</code>
+```
+virtualenv py30
+```
 
 Activate virtual env <br/>
-<code>source py30/bin/activate</code>
+```
+source py30/bin/activate
+```
 
 Install jupyter notebook <br/>
-<code>pip install jupyter</code>
+```
+pip install jupyter
+```
 
 Make sure Jupyter version for installation <br/>
-<code>jupyter --version</code>
+```
+jupyter --version
+```
 
 install Jupyter lab <br/>
-<code>pip install jupyterlab</code>
+```
+pip install jupyterlab
+```
 
-Generate config file for jupyter notebook
-<code>jupyter-notebook --generate-config</code>
+Generate config file for jupyter notebook <br/>
+```
+jupyter-notebook --generate-config
+```
 
-Change note book config file.
-<code>vim jupyter_notebook_config.py</code>
+Change note book config file. <br/>
+```
+vim jupyter_notebook_config.py
 
-<code>
     → c.NotebookApp.allow_origin = '*'
     → c.NotebookApp.ip = 'your ip'
     → c.NotebookApp.port = 8888
-</code>
+```
 
 Add password for jupyter notebook password <br/>
-<code>jupyter notebook password</code>
+```
+jupyter notebook password
+```
 
 Create Workspace <br/>
-<code>mkdir /home/mmc/Desktop/jupyterlab</code>
+```
+mkdir /home/mmc/Desktop/jupyterlab
+```
 
 Create jupyter lab service <br/>
-<code>sudo vim /etc/systemd/system/jupyter-lab.service</code>
+```
+sudo vim /etc/systemd/system/jupyter-lab.service
+```
 
-<code>[Unit]
-Description=Jupyter Lab
+```
+[Unit]
+Description=Jupyter Lab <br/>
 [Service]
 Type=simple
 PIDFile=/run/jupyter.pid
@@ -68,13 +99,22 @@ Restart=always
 RestartSec=10
 #KillMode=mixed
 [Install]
-WantedBy=multi-user.target</code>
+WantedBy=multi-user.target
+```
 
 Reload for jupyter lab service <br/>
-<code>sudo systemctl daemon-reload</code>
+```
+sudo systemctl daemon-reload
+```
 
-<code>sudo systemctl enable jupyter-lab.service</code>
+```
+sudo systemctl enable jupyter-lab.service
+```
 
-<code>sudo systemctl enable jupyter-lab.service</code>
+```
+sudo systemctl enable jupyter-lab.service
+```
 
-<code>sudo systemctl status jupyter-lab.service</code>
+```
+sudo systemctl status jupyter-lab.service
+```
