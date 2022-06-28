@@ -28,12 +28,16 @@ Activate virtual env <br/>
 Install jupyter notebook <br/>
 <code>pip install jupyter</code>
 
+Make sure Jupyter version for installation <br/>
 <code>jupyter --version</code>
 
+install Jupyter lab <br/>
 <code>pip install jupyterlab</code>
 
+Generate config file for jupyter notebook
 <code>jupyter-notebook --generate-config</code>
 
+Change note book config file.
 <code>vim jupyter_notebook_config.py</code>
 
 <code>
@@ -42,10 +46,13 @@ Install jupyter notebook <br/>
     → c.NotebookApp.port = 8888
 </code>
 
+Add password for jupyter notebook password <br/>
 <code>jupyter notebook password</code>
 
+Create Workspace <br/>
 <code>mkdir /home/mmc/Desktop/jupyterlab</code>
 
+Create jupyter lab service <br/>
 <code>sudo vim /etc/systemd/system/jupyter-lab.service</code>
 
 <code>[Unit]
@@ -63,6 +70,7 @@ RestartSec=10
 [Install]
 WantedBy=multi-user.target</code>
 
+Reload for jupyter lab service <br/>
 <code>sudo systemctl daemon-reload</code>
 
 <code>sudo systemctl enable jupyter-lab.service</code>
